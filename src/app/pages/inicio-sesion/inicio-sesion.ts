@@ -94,7 +94,7 @@ export class InicioSesion implements OnInit {
       next: (data) => {
 
         // Guarda la información del usuario autenticado
-        this.auth.guardarUsuario(data.data);
+        this.auth.guardarUsuario((data as any).data);
 
         this.toastr.success(
           'Bienvenido a FreshBite',

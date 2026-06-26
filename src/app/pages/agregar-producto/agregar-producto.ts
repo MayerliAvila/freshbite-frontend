@@ -92,7 +92,7 @@ export class AgregarProducto implements OnInit {
     this.estado.obtenerEstado().subscribe({
 
       next: (data) => {
-        this.estado = data;
+        this.estados = data;
       },
 
       error: (error) => {

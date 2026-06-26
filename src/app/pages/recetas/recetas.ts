@@ -58,7 +58,7 @@ export class Recetas implements OnInit {
       next: (data) => {
 
         // Guarda las recetas obtenidas
-        this.recetas = data.sugerencias.recetas;
+        this.recetas = (data as any).sugerencias.recetas;
 
       },
 
