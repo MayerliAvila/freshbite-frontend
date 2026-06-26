@@ -1,0 +1,43 @@
+<div class="login-container">
+
+  <div class="login-card">
+
+    <div class="logo-section">
+      <h1>FRESHBITE</h1>
+      <p>Tu despensa inteligente</p>
+    </div>
+
+    <form class="login-form" [formGroup]="form" (ngSubmit)="login()">
+
+      <h2>Iniciar Sesión</h2>
+
+      <div class="input-group">
+        <label>Correo electrónico</label>
+        <input
+          formControlName="correo"
+          type="email"
+          placeholder="ejemplo@correo.com">
+      </div>
+
+      <div class="input-group">
+        <label>Contraseña</label>
+        <input
+          formControlName="password"
+          type="password"
+          placeholder="********">
+      </div>
+
+      <button type="submit" class="btn-login" (click)="login()">
+        Ingresar
+      </button>
+
+      <div class="register-link">
+        ¿No tienes cuenta?
+        <a routerLink="/registro">Crear cuenta</a>
+      </div>
+
+    </form>
+
+  </div>
+
+</div>

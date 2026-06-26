@@ -1,0 +1,147 @@
+.resumen-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-resumen{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    min-height: 120px;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.08);
+}
+
+.icono{
+    width: 80px;
+    height: 80px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 38px;
+}
+
+.info h2{
+    margin: 0;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.info h3{
+    margin: 5px 0;
+    font-size: 22px;
+}
+
+.info p{
+    margin: 0;
+    color: #666;
+}
+
+/* Fresco */
+
+.card-fresco{
+    background: #f3fff4;
+}
+
+.card-fresco .icono{
+    background: #dff7e1;
+}
+
+.card-fresco h2,
+.card-fresco h3{
+    color: #16a34a;
+}
+
+/* Próximo */
+
+.card-proximo{
+    background: #fff9eb;
+}
+
+.card-proximo .icono{
+    background: #ffe8a3;
+}
+
+.card-proximo h2,
+.card-proximo h3{
+    color: #d97706;
+}
+
+/* Vencido */
+
+.card-vencido{
+    background: #fff1f1;
+}
+
+.card-vencido .icono{
+    background: #ffd4d4;
+}
+
+.card-vencido h2,
+.card-vencido h3{
+    color: #dc2626;
+}
+
+/* ── RESPONSIVE: Tablet (≤ 900px) ── */
+@media (max-width: 900px) {
+    .resumen-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .card-resumen {
+        flex: 1;
+        min-width: 140px;
+    }
+
+    .info h2 {
+        font-size: 32px;
+    }
+
+    .info h3 {
+        font-size: 16px;
+    }
+
+    .icono {
+        width: 60px;
+        height: 60px;
+        font-size: 28px;
+    }
+}
+
+/* ── RESPONSIVE: Móvil (≤ 480px) ── */
+@media (max-width: 480px) {
+    .resumen-container {
+        flex-direction: column;
+    }
+
+    .card-resumen {
+        min-height: 90px;
+        padding: 14px;
+        gap: 14px;
+    }
+
+    .icono {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+    }
+
+    .info h2 {
+        font-size: 28px;
+    }
+
+    .info h3 {
+        font-size: 14px;
+    }
+}

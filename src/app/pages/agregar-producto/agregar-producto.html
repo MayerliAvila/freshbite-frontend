@@ -1,0 +1,88 @@
+<app-navbar></app-navbar>
+<div class="contenedor-formulario">
+
+    <div class="header">
+        <p class="subtitulo">
+            GESTIÓN DE INVENTARIO
+        </p>
+
+        <h1>
+            Agregar Producto
+        </h1>
+    </div>
+
+    <form
+        [formGroup]="form"
+        (ngSubmit)="guardarInventario()">
+
+        <!-- Producto -->
+        <div class="campo">
+
+            <label>
+                Producto
+            </label>
+
+            <select
+                class="input"
+                (change)="seleccionarProducto($event)">
+
+                <option value="">
+                    Seleccione un producto
+                </option>
+
+                <option
+                    *ngFor="let producto of productos"
+                    [value]="producto.id_producto">
+
+                    {{ producto.nombre }}
+
+                </option>
+
+            </select>
+
+        </div>
+
+        <!-- Cantidad -->
+        <div class="campo">
+
+            <label>
+                Cantidad
+            </label>
+
+            <input
+                type="number"
+                min="1"
+                formControlName="cantidad"
+                class="input">
+
+        </div>
+
+        <!-- Fecha -->
+        <div class="campo">
+
+            <label>
+                Fecha de vencimiento
+            </label>
+
+            <input
+                type="date"
+                formControlName="fecha_vencimiento"
+                class="input">
+        </div>
+
+
+        <button
+            type="submit"
+            class="btn-guardar">
+            Agregar al inventario
+        </button>
+        <button
+            (click)="regresar()"
+            type="submit"
+            class="btn-cancelar">
+            Cancelar
+        </button>
+
+    </form>
+
+</div>

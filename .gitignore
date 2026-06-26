@@ -1,0 +1,63 @@
+# ==========================
+# Angular
+# ==========================
+.angular/
+dist/
+out-tsc/
+tmp/
+
+# ==========================
+# Node
+# ==========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ==========================
+# Environment
+# ==========================
+src/environments/environment.ts
+src/environments/environment.prod.ts
+
+# Si los tienes en la raíz
+environment.ts
+environment.prod.ts
+
+# ==========================
+# IDE
+# ==========================
+.vscode/
+.idea/
+
+# ==========================
+# Sistema operativo
+# ==========================
+.DS_Store
+Thumbs.db
+
+# ==========================
+# Logs
+# ==========================
+logs/
+*.log
+
+# ==========================
+# Cache
+# ==========================
+.cache/
+.parcel-cache/
+.eslintcache
+
+# ==========================
+# Testing
+# ==========================
+coverage/
+
+# ==========================
+# Archivos temporales
+# ==========================
+*.tmp
+*.swp
+*.bak

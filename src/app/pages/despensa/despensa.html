@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+
+<div class="contenedor">
+
+  <div class="titulo">
+
+    <h1>Mi Despensa</h1>
+
+    <p>
+      Consulta y filtra los productos almacenados.
+    </p>
+
+  </div>
+
+  <div class="buscador">
+
+    <input
+      type="text"
+      placeholder="Buscar producto, categoría, estado..."
+      [(ngModel)]="textoBusqueda"
+      (input)="filtrarTabla()">
+
+  </div>
+
+  <div class="tabla-container">
+
+    <table class="tabla-productos">
+
+      <thead>
+
+        <tr>
+
+          <th (click)="ordenarPor('nombre_producto')">
+            Producto ▲▼
+          </th>
+
+          <th (click)="ordenarPor('categoria')">
+            Categoría ▲▼
+          </th>
+
+          <th (click)="ordenarPor('cantidad')">
+            Cantidad ▲▼
+          </th>
+
+          <th (click)="ordenarPor('estado')">
+            Estado ▲▼
+          </th>
+
+          <th (click)="ordenarPor('fecha_vencimiento')">
+            Fecha ▲▼
+          </th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let producto of productosFiltrados">
+
+          <td>{{ producto.nombre_producto }}</td>
+
+          <td>{{ producto.categoria }}</td>
+
+          <td>{{ producto.cantidad }}</td>
+
+          <td>
+
+            <span
+              [ngClass]="{
+                'estado-fresco': producto.estado === 'Fresco',
+                'estado-proximo': producto.estado === 'Próximo a vencer',
+                'estado-vencido': producto.estado === 'Vencido'
+              }">
+
+              {{ producto.estado }}
+
+            </span>
+
+          </td>
+
+          <td>{{ producto.fecha_vencimiento }}</td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

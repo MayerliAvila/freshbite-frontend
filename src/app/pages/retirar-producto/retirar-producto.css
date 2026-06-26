@@ -1,0 +1,265 @@
+/* ── ESTILOS PREMIUM PARA RETIRAR PRODUCTOS ── */
+.contenedor {
+    padding: 40px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+.header {
+    margin-bottom: 30px;
+    animation: fadeInDown 0.5s ease-out;
+}
+
+.header h1 {
+    color: #0f172a;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.025em;
+}
+
+.header p {
+    color: #64748b;
+    font-size: 1.05rem;
+}
+
+/* ── TABLA ESTILO TARJETA ── */
+.tabla-wrapper {
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+    overflow-x: auto;
+    border: 1px solid #f1f5f9;
+    animation: fadeIn 0.6s ease-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    white-space: nowrap;
+}
+
+thead {
+    background: #f8fafc;
+    border-bottom: 2px solid #e2e8f0;
+}
+
+th {
+    text-align: left;
+    padding: 18px 20px;
+    color: #475569;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+td {
+    padding: 16px 20px;
+    border-bottom: 1px solid #f1f5f9;
+    color: #1e293b;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+tbody tr {
+    transition: background-color 0.2s ease;
+}
+
+tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ── INPUT DE EDICIÓN ── */
+input[type="number"] {
+    padding: 8px 12px;
+    width: 90px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    color: #0f172a;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+input[type="number"]:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+/* ── BOTONES CON MICRO-ANIMACIONES ── */
+.acciones {
+    display: flex;
+    gap: 8px;
+}
+
+button {
+    font-family: inherit;
+    font-weight: 600;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+.btn-editar {
+    background: #eff6ff;
+    color: #2563eb;
+}
+.btn-editar:hover {
+    background: #2563eb;
+    color: white;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    transform: translateY(-1px);
+}
+
+.btn-guardar {
+    background: #16a34a;
+    color: white;
+}
+.btn-guardar:hover {
+    background: #15803d;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.2);
+    transform: translateY(-1px);
+}
+
+.btn-eliminar {
+    background: #fef2f2;
+    color: #dc2626;
+}
+.btn-eliminar:hover {
+    background: #dc2626;
+    color: white;
+    box-shadow: 0 4px 12px rgba(220, 38, 38, 0.2);
+    transform: translateY(-1px);
+}
+
+.btn-cancelar {
+    background: #f1f5f9;
+    color: #475569;
+}
+.btn-cancelar:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+button[disabled] {
+    opacity: 0.6;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* ── MODAL CON EFECTO GLASSMORPHISM ── */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.2s ease-out;
+}
+
+.modal {
+    background: white;
+    padding: 35px 30px;
+    border-radius: 20px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    max-width: 360px;
+    width: 90%;
+    text-align: center;
+    animation: modalSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal p {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #0f172a;
+}
+
+.modal-acciones {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+}
+.modal-acciones button {
+    flex: 1;
+    padding: 10px;
+    font-size: 0.95rem;
+}
+.modal-acciones .btn-eliminar {
+    background: #dc2626;
+    color: white;
+}
+.modal-acciones .btn-eliminar:hover {
+    background: #b91c1c;
+}
+
+/* ── ANIMACIONES CLAVE ── */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes modalSlideIn {
+    from { opacity: 0; transform: translateY(20px) scale(0.95); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+    .contenedor {
+        padding: 20px;
+    }
+    .header h1 {
+        font-size: 1.7rem;
+    }
+    th, td {
+        padding: 14px 12px;
+        font-size: 0.85rem;
+    }
+    .btn-editar, .btn-guardar, .btn-eliminar, .btn-cancelar {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor {
+        padding: 15px;
+    }
+    .header h1 {
+        font-size: 1.5rem;
+    }
+    th, td {
+        padding: 12px 10px;
+    }
+    .acciones {
+        flex-direction: column;
+        gap: 6px;
+    }
+    .btn-editar, .btn-guardar, .btn-eliminar, .btn-cancelar {
+        width: 100%;
+    }
+}

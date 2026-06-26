@@ -1,0 +1,64 @@
+<div class="perfil-container">
+
+  <div class="perfil-card">
+
+    <h2>Editar Perfil</h2>
+
+    <form
+      [formGroup]="form"
+      (ngSubmit)="actualizarPerfil()">
+
+      <div class="input-group">
+        <label>Nombre</label>
+
+        <input
+          type="text"
+          formControlName="nombre">
+
+        <small
+          *ngIf="form.get('nombre')?.invalid &&
+                 form.get('nombre')?.touched">
+          El nombre es obligatorio
+        </small>
+      </div>
+
+      <div class="input-group">
+        <label>Correo</label>
+
+        <input
+          type="email"
+          [value]="usuarioActual?.correo"
+          disabled>
+      </div>
+
+      <div class="input-group">
+        <label>Nueva contraseña</label>
+
+        <input
+          type="password"
+          formControlName="password">
+
+        <small
+          *ngIf="form.get('password')?.invalid &&
+                 form.get('password')?.touched">
+          La contraseña debe tener mínimo 4 caracteres
+        </small>
+      </div>
+
+      <button
+        type="submit"
+        class="btn-guardar">
+        Guardar cambios
+      </button>
+      <button
+        (click)="login()"
+        type="submit"
+        class="btn-cancelar">
+        Cancelar
+      </button>
+
+    </form>
+
+  </div>
+
+</div>

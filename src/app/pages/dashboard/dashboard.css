@@ -1,0 +1,22 @@
+.dashboard-top{
+    display: grid;
+    margin-top: 15px;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+/* ── RESPONSIVE: Tablet (≤ 900px) ── */
+@media (max-width: 900px) {
+    .dashboard-top {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ── RESPONSIVE: Móvil (≤ 480px) ── */
+@media (max-width: 480px) {
+    .dashboard-top {
+        gap: 14px;
+        margin-top: 10px;
+    }
+}

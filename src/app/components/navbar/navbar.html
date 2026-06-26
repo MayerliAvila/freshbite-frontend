@@ -1,0 +1,45 @@
+<nav class="navbar">
+  <!-- Logo -->
+  <div class="navbar-logo">
+    <div class="logo-icon">
+    </div>
+
+    <div class="logo-text">
+      <h1 class="logo-click" routerLink="/dashboard"> FRESHBITE </h1>
+      <span>Tu despensa inteligente</span>
+    </div>
+  </div>
+
+  <!-- Usuario -->
+  <div class="navbar-user">
+    <div class="user-profile">
+      <div class="avatar">
+        {{ inicial }}
+      </div>
+     <button
+      class="menu-btn"
+      (click)="toggleMenu()">
+      ▼
+    </button>
+
+    <div
+      class="dropdown-menu"
+      *ngIf="mostrarMenu">
+
+      <button
+        class="dropdown-item"
+        (click)="editarPerfil()">
+        👤 Editar perfil
+      </button>
+
+      <button
+        class="dropdown-item logout"
+        (click)="logout()">
+        🚪 Cerrar sesión
+      </button>
+
+    </div>
+
+    </div>
+  </div>
+</nav>

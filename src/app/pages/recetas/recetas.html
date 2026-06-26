@@ -1,0 +1,63 @@
+
+<app-navbar></app-navbar>
+
+<div class="contenedor-recetas">
+
+    <div class="titulo">
+
+        <h1>🍽️ Recetas sugeridas por IA</h1>
+
+        <p>
+            Estas recetas fueron generadas según los productos que tienes en tu despensa.
+        </p>
+
+    </div>
+
+    <div class="grid-recetas">
+
+        <div
+            class="card-receta"
+            *ngFor="let receta of recetas">
+
+            <div class="cabecera">
+
+                <h2>{{ receta.titulo }}</h2>
+
+            </div>
+
+            <div class="descripcion">
+
+                <p>
+                    {{ receta.descripcion }}
+                </p>
+
+            </div>
+
+            <div class="ingredientes">
+
+                <h3>Ingredientes</h3>
+
+                <ul>
+
+                    <li
+                        *ngFor="let ingrediente of receta.ingredientes">
+
+                        <strong>{{ ingrediente.nombre }}</strong>
+
+                        <span>
+                            {{ ingrediente.cantidad }}
+                        </span>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+
+        </div>
+
+    </div>
+
+</div>

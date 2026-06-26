@@ -1,0 +1,127 @@
+.perfil-container{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f5f7fa;
+    padding: 20px;
+}
+
+.perfil-card{
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.1);
+}
+
+.perfil-card h2{
+    text-align: center;
+    margin-bottom: 25px;
+    color: #16a34a;
+}
+
+.input-group{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.input-group label{
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.input-group input{
+    padding: 12px;
+    border: 1px solid #dcdcdc;
+    border-radius: 10px;
+    font-size: 15px;
+}
+
+.input-group input:focus{
+    outline: none;
+    border-color: #16a34a;
+}
+
+.input-group input:disabled{
+    background: #f3f4f6;
+    color: #666;
+}
+
+small{
+    color: red;
+    margin-top: 5px;
+}
+
+.btn-guardar{
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #16a34a;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-guardar:hover{
+    background: #15803d;
+}
+.btn-cancelar{
+    width: 100%;
+    padding: 14px;
+    margin-top: 14px;
+    border: none;
+    border-radius: 10px;
+    background: #748179;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.btn-cancelar:hover{
+    background: #3a413d;
+}
+
+/* ── RESPONSIVE: Tablet (≤ 768px) ── */
+@media (max-width: 768px) {
+    .perfil-container {
+        padding: 16px;
+        align-items: flex-start;
+        padding-top: 30px;
+    }
+
+    .perfil-card {
+        padding: 24px;
+    }
+}
+
+/* ── RESPONSIVE: Móvil (≤ 480px) ── */
+@media (max-width: 480px) {
+    .perfil-container {
+        padding: 12px;
+        padding-top: 20px;
+    }
+
+    .perfil-card {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .perfil-card h2 {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .btn-guardar,
+    .btn-cancelar {
+        padding: 12px;
+        font-size: 15px;
+    }
+}

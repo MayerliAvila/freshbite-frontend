@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+body{
+    background: #D3CCE3;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E9E4F0, #D3CCE3);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E9E4F0, #D3CCE3); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+ */
+}
+
+
+h1,h2,h3{
+    color:#0f172a;
+}
+
+p{
+    color:#64748b;
+}
+
+/* ── RESPONSIVE: padding general de páginas con navbar ── */
+@media (max-width: 768px) {
+    .contenedor,
+    .contenedor-recetas,
+    .contenedor-formulario {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenedor,
+    .contenedor-recetas,
+    .contenedor-formulario {
+        padding: 12px;
+    }
+}
