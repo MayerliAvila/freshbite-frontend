@@ -15,15 +15,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# ==========================
-# Environment
-# ==========================
-src/environments/environment.ts
-src/environments/environment.prod.ts
 
-# Si los tienes en la raíz
-environment.ts
-environment.prod.ts
 
 # ==========================
 # IDE
