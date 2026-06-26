@@ -26,9 +26,7 @@
                 class="input"
                 (change)="seleccionarProducto($event)">
 
-                <option value="">
-                    Seleccione un producto
-                </option>
+                <option [ngValue]="null">Seleccione un producto</option>
 
                 <option
                     *ngFor="let producto of productos"

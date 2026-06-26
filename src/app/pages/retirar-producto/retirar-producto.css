@@ -164,53 +164,144 @@ button[disabled] {
     box-shadow: none !important;
 }
 
-/* ── MODAL CON EFECTO GLASSMORPHISM ── */
-.overlay {
+
+/* Modal*/ 
+/* Fondo oscuro */
+.modal-overlay{
     position: fixed;
     inset: 0;
-    background: rgba(15, 23, 42, 0.4);
-    backdrop-filter: blur(4px);
+    background: rgba(0,0,0,.45);
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 9999;
-    animation: fadeIn 0.2s ease-out;
+    animation: aparecer .25s ease;
 }
 
-.modal {
-    background: white;
-    padding: 35px 30px;
-    border-radius: 20px;
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    max-width: 360px;
+/* Caja */
+.modal-confirmacion{
     width: 90%;
-    text-align: center;
-    animation: modalSlideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    max-width: 420px;
+
+    background: #fff;
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,.3);
+
+    animation: subir .25s ease;
 }
 
-.modal p {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 25px;
-    color: #0f172a;
+/* Header */
+
+.modal-header{
+    padding: 18px 24px;
+    border-bottom: 1px solid #ececec;
 }
 
-.modal-acciones {
+.modal-header h3{
+    margin: 0;
+    color: #d32f2f;
+    font-size: 22px;
+}
+
+/* Body */
+
+.modal-body{
+    padding: 25px;
+}
+
+.modal-body p{
+    margin: 0;
+    font-size: 16px;
+    color: #444;
+    line-height: 1.5;
+}
+
+.advertencia{
+    margin-top: 15px !important;
+    color: #d32f2f !important;
+    font-weight: 600;
+}
+
+/* Footer */
+
+.modal-footer{
+    padding: 18px 24px;
+
     display: flex;
-    gap: 12px;
-    justify-content: center;
+    justify-content: flex-end;
+    gap: 10px;
+
+    border-top: 1px solid #ececec;
 }
-.modal-acciones button {
-    flex: 1;
-    padding: 10px;
-    font-size: 0.95rem;
+
+/* Botón cancelar */
+
+.btn-cancelar{
+    border: none;
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    background: #e0e0e0;
+    color: #333;
+
+    cursor: pointer;
+
+    transition: .2s;
 }
-.modal-acciones .btn-eliminar {
-    background: #dc2626;
-    color: white;
+
+.btn-cancelar:hover{
+    background: #cfcfcf;
 }
-.modal-acciones .btn-eliminar:hover {
-    background: #b91c1c;
+
+/* Botón eliminar */
+
+.btn-eliminar{
+    border: none;
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    background: white;
+    color: #e53935;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.btn-eliminar:hover{
+    background: #c62828;
+}
+
+button:disabled{
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+/* Animaciones */
+
+@keyframes aparecer{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+@keyframes subir{
+    from{
+        transform: translateY(-20px);
+        opacity:0;
+    }
+    to{
+        transform: translateY(0);
+        opacity:1;
+    }
 }
 
 /* ── ANIMACIONES CLAVE ── */
@@ -227,39 +318,134 @@ button[disabled] {
     to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
-/* ── RESPONSIVE ── */
-@media (max-width: 768px) {
-    .contenedor {
-        padding: 20px;
-    }
-    .header h1 {
-        font-size: 1.7rem;
-    }
-    th, td {
-        padding: 14px 12px;
-        font-size: 0.85rem;
-    }
-    .btn-editar, .btn-guardar, .btn-eliminar, .btn-cancelar {
-        padding: 6px 12px;
-        font-size: 0.8rem;
-    }
-}
+/* ===================================================
+   CELULARES (768px)
+=================================================== */
 
-@media (max-width: 480px) {
-    .contenedor {
-        padding: 15px;
+@media (max-width: 768px){
+
+    .contenedor{
+        padding: 20px 12px;
     }
-    .header h1 {
+
+    .header{
+        text-align: center;
+        margin-bottom: 18px;
+    }
+
+    .header h1{
         font-size: 1.5rem;
     }
-    th, td {
-        padding: 12px 10px;
+
+    .header p{
+        font-size: .9rem;
     }
-    .acciones {
-        flex-direction: column;
+
+    .tabla-wrapper{
+        overflow-x: auto;
+        border-radius: 12px;
+    }
+
+    table{
+        min-width: 700px;
+    }
+
+    th{
+        padding: 12px;
+        font-size: .78rem;
+    }
+
+    td{
+        padding: 12px;
+        font-size: .82rem;
+    }
+
+    input[type="number"]{
+        width: 65px;
+        padding: 6px 8px;
+        font-size: .85rem;
+    }
+
+    .acciones{
         gap: 6px;
     }
-    .btn-editar, .btn-guardar, .btn-eliminar, .btn-cancelar {
-        width: 100%;
+
+    button{
+        padding: 7px 12px;
+        font-size: .78rem;
+        white-space: nowrap;
     }
+
+    /* Modal */
+
+    .modal-confirmacion{
+        width: 94%;
+        max-width: 340px;
+        border-radius: 14px;
+    }
+
+    .modal-header{
+        padding: 16px;
+    }
+
+    .modal-header h3{
+        font-size: 20px;
+    }
+
+    .modal-body{
+        padding: 18px;
+    }
+
+    .modal-body p{
+        font-size: .95rem;
+    }
+
+    .modal-footer{
+        flex-direction: column-reverse;
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .modal-footer button{
+        width: 100%;
+        justify-content: center;
+        padding: 12px;
+        font-size: .9rem;
+    }
+
+}
+
+
+@media (max-width: 480px){
+
+    .contenedor{
+        padding: 16px 8px;
+    }
+
+    .header h1{
+        font-size: 1.3rem;
+    }
+
+    .header p{
+        font-size: .82rem;
+    }
+
+    th{
+        font-size: .72rem;
+    }
+
+    td{
+        font-size: .76rem;
+    }
+
+    button{
+        font-size: .72rem;
+        padding: 6px 10px;
+    }
+
+    input[type="number"]{
+        width: 55px;
+        font-size: .75rem;
+    }
+
 }

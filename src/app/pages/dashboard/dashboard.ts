@@ -8,27 +8,41 @@ import { AccionesRapidas } from '../../components/acciones-rapidas/acciones-rapi
 
 @Component({
   selector: 'app-dashboard',
-  imports: [Navbar, GraficoDespensa, ResumenRapido, AccionesRapidas],
+  imports: [
+    Navbar,
+    GraficoDespensa,
+    ResumenRapido,
+    AccionesRapidas
+  ],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard {
 
-  usuario:any;
-  
-  constructor(
-    private auth:Auth,
-    private router:Router,
-  ){}
-  
+  // Información del usuario autenticado
+  usuario: any;
 
+  constructor(
+    private auth: Auth,
+    private router: Router,
+  ) {}
+
+  /**
+   * Método que se ejecuta al inicializar el componente.
+   * Verifica que exista una sesión activa y obtiene
+   * la información del usuario autenticado.
+   */
   ngOnInit(): void {
 
-  if(!this.auth.estaAutenticado()){
-    this.router.navigate(['/']);
-    return;
+    // Valida que el usuario haya iniciado sesión
+    if (!this.auth.estaAutenticado()) {
+      this.router.navigate(['/']);
+      return;
+    }
+
+    // Obtiene la información del usuario autenticado
+    this.usuario = this.auth.obtenerUsuario();
+
   }
 
-  this.usuario = this.auth.obtenerUsuario();
-}
 }

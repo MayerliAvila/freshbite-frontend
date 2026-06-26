@@ -96,6 +96,7 @@ export class RetirarProducto implements OnInit {
   // Abre el modal nativo en vez de confirm()
   solicitarEliminar(idInventario: number): void {
     this.idEliminarPendiente = idInventario;
+    console.log(idInventario);
   }
 
   confirmarEliminar(): void {
